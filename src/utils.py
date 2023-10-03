@@ -1,5 +1,4 @@
-
-BOT_KEY = 'ENTER YOUR KEY' 
+BOT_KEY = 'ENTER YOUR KEY'
 TIMEOUT = 60 # [s]
 REFRESHTIME = .1 #[s]
 # Down for a cross stuff
@@ -9,6 +8,7 @@ REQUEST = 'https://downforacross.com/beta/play/'
 WELCOME = 'Please select type of puzzle and date: \n\n**PUZZLES**\nnyt: New York Times\nla : LA Times\ntc : The Crossword \nr : Random crossword\n\n**DATES**\ntoday: Today\nmon: Monday\ntues: Tuesday\nwed: Wednesday\nthurs: Thuesday \nfri: Friday\nsat: Saturday\nsun: Sunday\n\n\n For example:\n/down nyt\n/down la tues\n/down r'
 GENERATING = 'Generating game, please wait...'
 NO_GAMES = 'Sorry there are no available games for selected game type and dates...'
+INVALID_GAME = 'Sorry that is not a valid number, please select again'
 MAPPING = {
     'nyt'   : 'NY Times',
     'la'    : 'LA Times',
@@ -19,5 +19,7 @@ MAPPING = {
     'thurs' : 'Thu',
     'fri'   : 'Fri',
     'sat'   : 'Sat',
-    'sun'   : 'Sun'
+    'sun'   : 'Sun',
+    'today' :  None,
+    'r'     :  None
 }

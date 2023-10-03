@@ -22,7 +22,6 @@ class Puzzler:
                     if act_type.lower() in puzzles[id]['content']['info']['title'].lower():
                         if cross_date is not None and cross_date !='today':
                             act_date = utils.MAPPING[cross_date]
-                            print(act_date)
                             if act_date.lower() in puzzles[id]['content']['info']['title'].lower():
                                 return_list.append([puzzles[id]['content']['info']['title'],puzzles[id]['pid']])
                         elif cross_date is not None and cross_date =='today':

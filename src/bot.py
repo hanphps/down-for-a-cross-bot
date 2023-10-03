@@ -44,12 +44,15 @@ def echo_all(message):
 def reply_to_list(message,puzzle_list):
     num = int(message.text)-1
 
-    print(num)
-    print(puzzle_list)
-    if num <= len(puzzle_list):
+    if num < len(puzzle_list):
         puzzle = puzzle_list[num]
         bot.reply_to(message,utils.GENERATING,parse_mode="Markdown")
         bot.reply_to(message,puzzle[0]+': '+puzzles.create_puzzle(puzzle[1]),parse_mode="Markdown")
+    else:
+        bot.reply_to(message,utils.INVALID_GAME,parse_mode="Markdown")
+        reply = bot.reply_to(message,prompt_list(puzzle_list),parse_mode="Markdown")
+        bot.register_next_step_handler(reply, reply_to_list,puzzle_list)
+
 
 
 
